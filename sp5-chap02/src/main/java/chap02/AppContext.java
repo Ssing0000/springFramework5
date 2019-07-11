@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class AppContext{
 	
 	//Bean 어노텡이션이 붙이면, 해당 메서드가 생성한 객체를 스프링이 관리하는 빈 객체로 등록
-	//여기서 메서드 이름인 geeter는 빈 객체럴 참조할 때 사용된다.
+	//여기서 메서드 이름인 geeter는 빈 객체를 참조할 때 사용된다.
 	@Bean
 	public Greeter greeter() {
 		Greeter g = new Greeter();
