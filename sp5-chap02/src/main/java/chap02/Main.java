@@ -16,7 +16,7 @@ public class Main {
 		// getBean 메서드는 빈 객체를 검색할때 사용.
 		// getBean(메서드 이름이자 빈객체의 이름, 검색할 빈 객체의 타입)
 		Greeter g1 = ctx.getBean("greeter", Greeter.class);
-		Greeter g2 = ctx.getBean("greeter", Greeter.class);
+		Greeter g2 = ctx.getBean("greeter1", Greeter.class);
 		
 		System.out.println("(g1==g2) = " + (g1==g2)); // (g1==g2) = true
 		
