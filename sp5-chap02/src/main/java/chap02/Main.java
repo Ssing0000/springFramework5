@@ -15,10 +15,14 @@ public class Main {
 		// AnnotationConfigApplicationContext는 AppContext에 정의한 @Bean 정보를 읽어와 Greeter 객체를 생성, 초기화 한다.
 		// getBean 메서드는 빈 객체를 검색할때 사용.
 		// getBean(메서드 이름이자 빈객체의 이름, 검색할 빈 객체의 타입)
-		Greeter g = ctx.getBean("greeter", Greeter.class);
+		Greeter g1 = ctx.getBean("greeter", Greeter.class);
+		Greeter g2 = ctx.getBean("greeter", Greeter.class);
 		
-		String msg = g.greet("스프링");
-		System.out.println(msg);
+		System.out.println("(g1==g2) = " + (g1==g2)); // (g1==g2) = true
+		
+		// g1,g2는 같은 객체를 리턴한다.
+		// 별도의 설정을 하지 않으면 스프링은 한개의 빈 객체만을 생성.
+		// 이때 객체는 싱글톤(Single object) 법위를 갖는다.
 		ctx.close();
 	}
 }
